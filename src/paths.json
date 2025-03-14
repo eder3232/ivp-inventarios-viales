@@ -1,0 +1,8 @@
+{
+  "BASE_DIR": ".",
+  "DATA_DIR": "data",
+  "IMAGES_RAW_DIR": "data/images_raw",
+  "IMAGES_RENAMED_BY_DATE_DIR": "tmp/images_renamed_by_date",
+  "IMAGES_REDUCED_SIZE_DIR": "tmp/images_reduced_size",
+  "EXEL_PATH": "input/data.xlsx"
+}
