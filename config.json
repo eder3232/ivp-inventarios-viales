@@ -1,0 +1,8 @@
+{
+  "data_dir": "data",
+  "images_dir": "data/images",
+  "images_raw_dir": "data/images_raw",
+  "images_renamed_by_date_dir": "data/images_renamed_by_date",
+  "input_file": "data/input.csv",
+  "output_file": "data/output.csv"
+}
