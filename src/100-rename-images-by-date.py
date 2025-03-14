@@ -1,5 +1,6 @@
 import os
 import glob
+import shutil
 from PIL import Image
 from config import CONFIG
 from pathlib import Path
@@ -35,13 +36,13 @@ imagenes_con_fechas = [(ruta, obtener_fecha_creacion(ruta)) for ruta in imagenes
 # Ordenar por fecha (del más antiguo al más reciente)
 imagenes_con_fechas.sort(key=lambda x: x[1])
 
-# Renombrar y guardar en la carpeta de salida
+# Copiar y renombrar en la carpeta de salida
 for i, (ruta, fecha) in enumerate(imagenes_con_fechas, start=1):
     ext = os.path.splitext(ruta)[1]  # Obtener la extensión (.jpg, .png, etc.)
     nuevo_nombre = os.path.join(
         IMAGES_RENAMED_BY_DATE, f"{i}{ext}"
     )  # Crear nuevo nombre
-    os.rename(ruta, nuevo_nombre)  # Mover y renombrar archivo
-    print(f"Movido y renombrado: {ruta} → {nuevo_nombre}")
+    shutil.copy2(ruta, nuevo_nombre)  # Copiar y renombrar archivo
+    print(f"Copiado y renombrado: {ruta} → {nuevo_nombre}")
 
 print("Proceso completado.")

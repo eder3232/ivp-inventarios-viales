@@ -4,7 +4,7 @@ from PIL import Image
 from pathlib import Path
 from config import CONFIG
 
-ORIGEN_PATH = Path(CONFIG["IMAGES_RAW_DIR"])
+ORIGEN_PATH = Path(CONFIG["IMAGES_RENAMED_BY_DATE_DIR"])
 DESTINO_PATH = Path(CONFIG["IMAGES_REDUCED_SIZE_DIR"])
 
 
@@ -25,7 +25,7 @@ def optimizar_imagen(ruta_entrada, ruta_salida, max_size=(300, 300), calidad=70)
 
         exif_bytes = piexif.dump(exif_data) if exif_data else None
 
-        # Guardar imagen optimizada
+        # Guardar imagen optimizada manteniendo su formato original
         img.save(ruta_salida, quality=calidad, exif=exif_bytes)
 
 
@@ -42,9 +42,9 @@ def procesar_imagenes(origen_path, destino_path, max_size=(1280, 1280), calidad=
         if not nombre_archivo.lower().endswith((".jpg", ".jpeg", ".png")):
             continue
 
-        # Crear ruta de salida (usando la misma extensión o forzando .jpg)
+        # Crear ruta de salida manteniendo el nombre original y la extensión
         nombre_salida, extension = os.path.splitext(nombre_archivo)
-        ruta_salida = os.path.join(destino_path, f"{nombre_salida}-optimizado.jpg")
+        ruta_salida = os.path.join(destino_path, f"{nombre_salida}{extension}")
 
         # Llamamos a la función de optimización
         optimizar_imagen(ruta_entrada, ruta_salida, max_size=max_size, calidad=calidad)
