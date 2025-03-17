@@ -2,7 +2,9 @@
   "BASE_DIR": ".",
   "DATA_DIR": "data",
   "IMAGES_RAW_DIR": "data/images_raw",
-  "IMAGES_RENAMED_BY_DATE_DIR": "tmp/images_renamed_by_date",
-  "IMAGES_REDUCED_SIZE_DIR": "tmp/images_reduced_size",
-  "EXEL_PATH": "input/data.xlsx"
+  "IMAGES_RENAMED_BY_DATE_DIR": "tmp/images/100_images_renamed_by_date",
+  "IMAGES_PROCESSED_DIR": "tmp/images/200_images_processed",
+  "IMAGES_REDUCED_SIZE_DIR": "tmp/images/300_images_reduced_size",
+  "EXEL_PATH": "input/data.xlsx",
+  "PROCESSED_DATA_PICKLE_PATH": "tmp/pickle/processed_data.pkl"
 }
